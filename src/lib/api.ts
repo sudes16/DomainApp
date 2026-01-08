@@ -144,7 +144,7 @@ function getMockWhoisData(): WhoisData {
   }
 }
 
-function getMockSocialHandles(domain: string): SocialHandleStatus {
+function getMockSocialHandles(_domain: string): SocialHandleStatus {
   return {
     twitter: Math.random() > 0.5,
     github: Math.random() > 0.5,
@@ -156,7 +156,7 @@ function getMockSocialHandles(domain: string): SocialHandleStatus {
 // AI Suggestions
 export async function generateAISuggestions(
   topic: string,
-  tone: 'professional' | 'playful' | 'modern' | 'classic',
+  _tone: 'professional' | 'playful' | 'modern' | 'classic',
   industry: string
 ): Promise<Array<{ domain: string; explanation: string }>> {
   await new Promise((resolve) => setTimeout(resolve, 500))
@@ -190,7 +190,6 @@ export async function bulkSearch(domains: string[]): Promise<DomainResult[]> {
   
   for (const domain of domains) {
     const tld = domain.split('.').pop() || 'com'
-    const name = domain.split('.')[0]
     
     const availability = getRandomAvailability()
     const brandability = calculateBrandability(domain)

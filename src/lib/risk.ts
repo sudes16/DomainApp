@@ -168,7 +168,7 @@ function levenshteinDistance(str1: string, str2: string): number {
 }
 
 function generateRationale(
-  level: 'low' | 'medium' | 'high',
+  _level: 'low' | 'medium' | 'high',
   isDGA: boolean,
   hasHomoglyphs: boolean,
   entropy: number,

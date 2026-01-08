@@ -2,11 +2,11 @@ import type { DomainResult, SearchConstraints, WhoisData } from '@/types'
 import { calculateBrandability } from './brandability'
 import { assessRisk } from './risk'
 import { generateId } from './utils'
-import { checkDomainAvailability, batchCheckDomains } from './whois'
+import { checkDomainAvailability } from './whois'
 
 // API Configuration
-const DOMAINR_API_KEY = import.meta.env.VITE_DOMAINR_API_KEY
-const WHOISXML_API_KEY = import.meta.env.VITE_WHOISXML_API_KEY
+const DOMAINR_API_KEY = (import.meta as any).env?.VITE_DOMAINR_API_KEY
+const WHOISXML_API_KEY = (import.meta as any).env?.VITE_WHOISXML_API_KEY
 
 /**
  * Check domain availability using Domainr API
@@ -88,25 +88,10 @@ async function getWhoisData(domain: string): Promise<WhoisData | null> {
  * Uses RDAP + DNS checking (no API keys needed)
  * This is similar to how Domainr works internally
  */
-async function checkDNSAvailability(domain: string): Promise<boolean> {
-  try {
-    // Use the new RDAP/DNS multi-layer checker
-    const result = await checkDomainAvailability(domain)
-    
-    // Log the check method and confidence for debugging
-    console.log(`${domain}: ${result.available ? 'Available' : 'Taken'} (${result.confidence} confidence via ${result.method}) - ${result.details}`)
-    
-    return result.available
-  } catch (error) {
-    console.error('Domain availability check error:', error)
-    return false // Assume taken on error to be safe
-  }
-}
-
 /**
  * Get registrar pricing (you'll need to implement API calls to each registrar)
  */
-async function getRegistrarPricing(domain: string, tld: string) {
+async function getRegistrarPricing(_domain: string, tld: string) {
   // This would require integrating with each registrar's API
   // For now, return estimated pricing
   const prices: Record<string, number> = {
@@ -149,7 +134,6 @@ export async function searchDomainsReal(
           // Check availability using available method
           let isAvailable = false
           let whoisData: WhoisData | null = null
-          let availabilityStatus: 'available' | 'taken' | 'premium' | 'on-hold' = 'taken'
           let confidence: 'high' | 'medium' | 'low' = 'low'
           let checkMethod = 'DNS'
 
@@ -157,14 +141,12 @@ export async function searchDomainsReal(
             // Use Domainr API (most accurate)
             const domainrResult = await checkDomainrAvailability(fullDomain)
             isAvailable = domainrResult.available
-            availabilityStatus = isAvailable ? 'available' : 'taken'
             confidence = 'high'
             checkMethod = 'Domainr API'
           } else {
             // Use multi-layer RDAP + DNS check
             const checkResult = await checkDomainAvailability(fullDomain)
             isAvailable = checkResult.available
-            availabilityStatus = isAvailable ? 'available' : 'taken'
             confidence = checkResult.confidence
             checkMethod = checkResult.method
           }

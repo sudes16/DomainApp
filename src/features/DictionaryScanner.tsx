@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BookOpen, Search, Filter, Sparkles, Download, TrendingUp } from 'lucide-react'
+import { BookOpen, Search, Sparkles, Download, TrendingUp } from 'lucide-react'
 import { getWordsByLength, getWordLengthStats } from '@/lib/dictionary'
 import { searchDomainsReal } from '@/lib/realApi'
 import { useAppStore } from '@/store/appStore'

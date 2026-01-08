@@ -1,4 +1,4 @@
-import { X, Upload, Sparkles } from 'lucide-react'
+import { Sparkles } from 'lucide-react'
 import { useState } from 'react'
 import { generateAISuggestions } from '@/lib/api'
 

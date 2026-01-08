@@ -13,7 +13,7 @@ export default function SearchBar({ onSearch, placeholder = 'Search for your per
   const [isSearching, setIsSearching] = useState(false)
   const [suggestions, setSuggestions] = useState<string[]>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
-  const debounceRef = useRef<NodeJS.Timeout>()
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>()
 
   useEffect(() => {
     if (searchQuery.length > 2) {

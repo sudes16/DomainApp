@@ -119,7 +119,10 @@ export default function ConstraintAccordion() {
             </label>
             <select
               value={constraints.enforcePattern || ''}
-              onChange={(e) => updateConstraints({ enforcePattern: e.target.value || null })}
+              onChange={(e) => {
+                const val = e.target.value
+                updateConstraints({ enforcePattern: val === '' ? null : val as 'CVC' | 'CV' | 'VCV' })
+              }}
               className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
             >
               {patterns.map((p) => (

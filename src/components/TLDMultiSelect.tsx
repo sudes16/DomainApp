@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useAppStore } from '@/store/appStore'
-import { Check, X } from 'lucide-react'
+import { Check } from 'lucide-react'
 import type { TLD } from '@/types'
 
 const popularTLDs: TLD[] = [
@@ -39,8 +39,6 @@ const nicheTLDs: TLD[] = [
   { name: '.space', extension: 'space', category: 'niche', description: 'Space', avgPrice: 6 },
   { name: '.fun', extension: 'fun', category: 'niche', description: 'Fun', avgPrice: 12 },
 ]
-
-const allTLDs = [...popularTLDs, ...techTLDs, ...businessTLDs, ...creativeTLDs, ...nicheTLDs]
 
 export default function TLDMultiSelect() {
   const { constraints, updateConstraints } = useAppStore()

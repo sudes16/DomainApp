@@ -1,5 +1,5 @@
 import { useAppStore } from '@/store/appStore'
-import { Trash2, Bell, BellOff, ExternalLink, AlertCircle } from 'lucide-react'
+import { Trash2, Bell, BellOff, AlertCircle } from 'lucide-react'
 import { formatDate, formatPrice } from '@/lib/utils'
 
 export default function Watchlist() {
