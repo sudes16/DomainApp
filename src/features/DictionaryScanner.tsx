@@ -168,12 +168,12 @@ export default function DictionaryScanner() {
             {characterLength}
           </div>
         </div>
-        <div className="p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+        <div className="p-3 bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 rounded-lg">
           <div className="flex items-center gap-2 mb-1">
-            <BookOpen className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-            <span className="text-xs text-blue-600 dark:text-blue-400 font-medium">Words</span>
+            <BookOpen className="w-4 h-4 text-primary-600 dark:text-primary-400" />
+            <span className="text-xs text-primary-600 dark:text-primary-400 font-medium">Words</span>
           </div>
-          <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">
+          <div className="text-2xl font-bold text-primary-700 dark:text-primary-300">
             {filteredWords.length}
           </div>
         </div>
@@ -211,8 +211,8 @@ export default function DictionaryScanner() {
       </div>
 
       {/* TLD Selection Note */}
-      <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-        <p className="text-sm text-blue-800 dark:text-blue-200">
+      <div className="mb-6 p-4 bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 rounded-lg">
+        <p className="text-sm text-primary-800 dark:text-primary-200">
           <strong>Note:</strong> Will scan all {filteredWords.length} words with {characterLength} characters across top 3 TLDs: {constraints.selectedTLDs.slice(0, 3).map(t => `.${t}`).join(', ')}
         </p>
       </div>
@@ -281,7 +281,7 @@ export default function DictionaryScanner() {
           {/* Available Domains */}
           {availableCount > 0 && (
             <div className="mb-4">
-              <h4 className="text-sm font-semibold text-green-700 dark:text-green-300 mb-2">
+              <h4 className="text-sm font-semibold text-primary-700 dark:text-primary-300 mb-2">
                 ✓ Available Domains ({availableCount})
               </h4>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
@@ -290,7 +290,7 @@ export default function DictionaryScanner() {
                   .map(result => (
                     <div
                       key={result.id}
-                      className="p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg"
+                      className="p-3 bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 rounded-lg"
                     >
                       <div className="font-medium text-sm text-gray-900 dark:text-gray-100">
                         {result.domain}
@@ -308,8 +308,8 @@ export default function DictionaryScanner() {
 
           {/* Summary Stats */}
           <div className="grid grid-cols-4 gap-2 text-center text-sm">
-            <div className="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
-              <div className="font-bold text-green-700 dark:text-green-300">
+            <div className="p-3 bg-primary-50 dark:bg-primary-900/20 rounded-lg">
+              <div className="font-bold text-primary-700 dark:text-primary-300">
                 {results.filter(r => r.availability === 'available').length}
               </div>
               <div className="text-xs text-gray-600 dark:text-gray-400">Available</div>
