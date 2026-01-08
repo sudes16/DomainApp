@@ -66,7 +66,7 @@ export default function SearchWorkspace() {
           }}
           className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
             showDictionary
-              ? 'bg-emerald-600 text-white'
+              ? 'bg-primary-600 text-white'
               : 'bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
           }`}
         >

@@ -95,7 +95,7 @@ export default function DictionaryScanner() {
   return (
     <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+        <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
           <BookOpen className="w-6 h-6 text-white" />
         </div>
         <div>
@@ -124,7 +124,7 @@ export default function DictionaryScanner() {
           />
           <div className="flex items-center justify-between mt-2 text-sm text-gray-600 dark:text-gray-400">
             <span>{minLength} chars</span>
-            <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
+            <span className="text-2xl font-bold text-primary-600 dark:text-primary-400">
               {characterLength}
             </span>
             <span>{maxLength} chars</span>
@@ -142,9 +142,9 @@ export default function DictionaryScanner() {
                 disabled={count === 0}
                 className={`px-3 py-2 rounded-lg font-medium text-sm transition-all ${
                   characterLength === len
-                    ? 'bg-emerald-600 text-white shadow-lg scale-105'
+                    ? 'bg-primary-600 text-white shadow-lg scale-105'
                     : count > 0
-                    ? 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/30'
+                    ? 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30'
                     : 'bg-gray-50 dark:bg-gray-900 text-gray-400 dark:text-gray-600 cursor-not-allowed opacity-50'
                 }`}
                 title={`${count} words with ${len} characters`}
@@ -159,12 +159,12 @@ export default function DictionaryScanner() {
 
       {/* Stats */}
       <div className="mb-6 grid grid-cols-3 gap-3">
-        <div className="p-3 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-lg">
+        <div className="p-3 bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 rounded-lg">
           <div className="flex items-center gap-2 mb-1">
-            <TrendingUp className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-            <span className="text-xs text-emerald-600 dark:text-emerald-400 font-medium">Length</span>
+            <TrendingUp className="w-4 h-4 text-primary-600 dark:text-primary-400" />
+            <span className="text-xs text-primary-600 dark:text-primary-400 font-medium">Length</span>
           </div>
-          <div className="text-2xl font-bold text-emerald-700 dark:text-emerald-300">
+          <div className="text-2xl font-bold text-primary-700 dark:text-primary-300">
             {characterLength}
           </div>
         </div>
@@ -221,7 +221,7 @@ export default function DictionaryScanner() {
       <button
         onClick={handleScan}
         disabled={searching || filteredWords.length === 0}
-        className="w-full px-6 py-4 bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-400 text-white rounded-lg font-semibold text-lg transition-colors flex items-center justify-center gap-2"
+        className="w-full px-6 py-4 bg-primary-600 hover:bg-primary-700 disabled:bg-gray-400 text-white rounded-lg font-semibold text-lg transition-colors flex items-center justify-center gap-2"
       >
         {searching ? (
           <>
@@ -241,7 +241,7 @@ export default function DictionaryScanner() {
         <div className="mt-4">
           <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
             <div
-              className="bg-emerald-600 h-3 rounded-full transition-all duration-300"
+              className="bg-primary-600 h-3 rounded-full transition-all duration-300"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -270,7 +270,7 @@ export default function DictionaryScanner() {
               </button>
               <button
                 onClick={handleLoadToWorkspace}
-                className="px-3 py-2 bg-emerald-600 text-white rounded-lg text-sm font-medium hover:bg-emerald-700 flex items-center gap-2"
+                className="px-3 py-2 bg-primary-600 text-white rounded-lg text-sm font-medium hover:bg-primary-700 flex items-center gap-2"
               >
                 <Sparkles className="w-4 h-4" />
                 Load to Workspace
