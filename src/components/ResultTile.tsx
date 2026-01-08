@@ -41,11 +41,11 @@ export default function ResultTile({ domain }: ResultTileProps) {
 
   const getAvailabilityBadge = () => {
     const badges = {
-      available: { label: 'Available', icon: CheckCircle2, className: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 border-green-300 dark:border-green-700' },
+      available: { label: 'Available', icon: CheckCircle2, className: 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border-primary-300 dark:border-primary-700' },
       taken: { label: 'Taken', icon: AlertTriangle, className: 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700' },
       premium: { label: 'Premium', icon: DollarSign, className: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-700' },
       'on-hold': { label: 'On Hold', icon: Clock, className: 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 border-orange-300 dark:border-orange-700' },
-      checking: { label: 'Checking...', icon: Clock, className: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-700' },
+      checking: { label: 'Checking...', icon: Clock, className: 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border-primary-300 dark:border-primary-700' },
     }
 
     const badge = badges[domain.availability]
@@ -63,7 +63,7 @@ export default function ResultTile({ domain }: ResultTileProps) {
     if (!domain.riskScore) return null
 
     const colors = {
-      low: 'text-green-600 dark:text-green-400',
+      low: 'text-primary-600 dark:text-primary-400',
       medium: 'text-yellow-600 dark:text-yellow-400',
       high: 'text-red-600 dark:text-red-400',
     }

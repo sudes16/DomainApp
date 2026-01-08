@@ -177,12 +177,12 @@ export default function DictionaryScanner() {
             {filteredWords.length}
           </div>
         </div>
-        <div className="p-3 bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-lg">
+        <div className="p-3 bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 rounded-lg">
           <div className="flex items-center gap-2 mb-1">
-            <Search className="w-4 h-4 text-purple-600 dark:text-purple-400" />
-            <span className="text-xs text-purple-600 dark:text-purple-400 font-medium">TLDs</span>
+            <Search className="w-4 h-4 text-primary-600 dark:text-primary-400" />
+            <span className="text-xs text-primary-600 dark:text-primary-400 font-medium">TLDs</span>
           </div>
-          <div className="text-2xl font-bold text-purple-700 dark:text-purple-300">
+          <div className="text-2xl font-bold text-primary-700 dark:text-primary-300">
             {constraints.selectedTLDs.slice(0, 3).length}
           </div>
         </div>

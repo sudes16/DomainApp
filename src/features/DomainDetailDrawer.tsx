@@ -55,7 +55,7 @@ export default function DomainDetailDrawer({ domain, onClose }: DomainDetailDraw
               <span
                 className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
                   domain.availability === 'available'
-                    ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300'
+                    ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
                     : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300'
                 }`}
               >
@@ -107,9 +107,9 @@ export default function DomainDetailDrawer({ domain, onClose }: DomainDetailDraw
           </div>
 
           {/* Brandability Section */}
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
+          <div className="bg-gradient-to-r from-primary-50 to-purple-50 dark:from-primary-900/20 dark:to-purple-900/20 border border-primary-200 dark:border-primary-800 rounded-lg p-6">
             <div className="flex items-center gap-2 mb-4">
-              <BarChart3 className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+              <BarChart3 className="w-5 h-5 text-primary-600 dark:text-primary-400" />
               <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
                 Brandability Analysis
               </h3>
@@ -122,7 +122,7 @@ export default function DomainDetailDrawer({ domain, onClose }: DomainDetailDraw
                   <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                     Overall Score
                   </span>
-                  <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                  <span className="text-2xl font-bold text-primary-600 dark:text-primary-400">
                     {brandability.overall}/100
                   </span>
                 </div>
@@ -130,7 +130,7 @@ export default function DomainDetailDrawer({ domain, onClose }: DomainDetailDraw
                   <div
                     className={`h-3 rounded-full transition-all ${
                       brandability.overall >= 70
-                        ? 'bg-green-500'
+                        ? 'bg-primary-500'
                         : brandability.overall >= 40
                         ? 'bg-yellow-500'
                         : 'bg-red-500'
@@ -169,12 +169,12 @@ export default function DomainDetailDrawer({ domain, onClose }: DomainDetailDraw
               </div>
 
               {/* Explanation */}
-              <div className="pt-4 border-t border-blue-200 dark:border-blue-800">
+              <div className="pt-4 border-t border-primary-200 dark:border-primary-800">
                 <p className="text-sm text-gray-700 dark:text-gray-300">{brandability.explanation}</p>
               </div>
 
               {/* TTS Preview */}
-              <button className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-blue-200 dark:border-blue-700 rounded-lg text-blue-600 dark:text-blue-400 font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors flex items-center justify-center gap-2">
+              <button className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-primary-200 dark:border-primary-700 rounded-lg text-primary-600 dark:text-primary-400 font-medium hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex items-center justify-center gap-2">
                 <Volume2 className="w-4 h-4" />
                 Listen to Pronunciation
               </button>
@@ -183,9 +183,9 @@ export default function DomainDetailDrawer({ domain, onClose }: DomainDetailDraw
 
           {/* Risk Guard */}
           {domain.riskScore && (
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border border-purple-200 dark:border-purple-800 rounded-lg p-6">
+            <div className="bg-gradient-to-r from-primary-50 to-pink-50 dark:from-primary-900/20 dark:to-pink-900/20 border border-primary-200 dark:border-primary-800 rounded-lg p-6">
               <div className="flex items-center gap-2 mb-4">
-                <Shield className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                <Shield className="w-5 h-5 text-primary-600 dark:text-primary-400" />
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Risk Guard™</h3>
               </div>
 
@@ -195,7 +195,7 @@ export default function DomainDetailDrawer({ domain, onClose }: DomainDetailDraw
                   <span
                     className={`px-3 py-1 rounded-full text-sm font-medium ${
                       domain.riskScore.level === 'low'
-                        ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300'
+                        ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
                         : domain.riskScore.level === 'medium'
                         ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300'
                         : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
@@ -226,7 +226,7 @@ export default function DomainDetailDrawer({ domain, onClose }: DomainDetailDraw
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-purple-200 dark:border-purple-800">
+                <div className="pt-3 border-t border-primary-200 dark:border-primary-800">
                   <p className="text-sm text-gray-700 dark:text-gray-300">
                     {domain.riskScore.rationale}
                   </p>

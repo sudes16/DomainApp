@@ -76,7 +76,7 @@ export default function Watchlist() {
                     <span
                       className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${
                         item.availability === 'available'
-                          ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300'
+                          ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
                           : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300'
                       }`}
                     >

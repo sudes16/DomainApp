@@ -85,7 +85,7 @@ export default function AIIdeasPane({ onSelectSuggestion }: AIIdeasPaneProps) {
       <button
         onClick={handleGenerate}
         disabled={loading || !topic.trim()}
-        className="w-full px-4 py-3 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-400 text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+        className="w-full px-4 py-3 bg-primary-600 hover:bg-primary-700 disabled:bg-gray-400 text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
       >
         {loading ? (
           <>
